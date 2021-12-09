@@ -29,7 +29,7 @@
 
 # 开始学习(Get started)
 
-1. 先克隆本仓库获取资料：git clone [xxxxxxxx](https://gitee.com/weidongshan/lvgl_100ask_course_materials.git)
+1. 先克隆本仓库获取资料：git clone [https://gitee.com/weidongshan/lvgl_100ask_course_materials.git](https://gitee.com/weidongshan/lvgl_100ask_course_materials.git)
 2. 需要观看视频教程请阅读本资料根目录的 `01_视频教程/README.md` 文档说明。
 3. 需要阅读文档教程请阅读本资料根目录的 `04_参考手册/README.md` 文档说明。
 4. 安装开发环境请进入本资料根目录的 `03_开发软件` 查看软件列表进行安装，视频教程中有对应的安装教程。
