@@ -2,7 +2,7 @@
 
 <p align="center"><a href="https://www.100ask.net" target="_blank" rel="noopener noreferrer"><img width="100" src="http://wechatapppro-1252524126.file.myqcloud.com/appTVs2sJfo3933/image/b_u_5fb1e35c3d801_CUAzKqf9/knhb7p8x0j7u.png" alt="100ASK logo"></a></p>
 
-<h2 align="center">韦东山百问网LVGL教程资料</h2>
+<h2 align="center">韦东山百问网LVGL教程资料</h2>   
 
 韦东山 [百问网](https://www.100ask.net) LVGL教程包括视频教程、文档教程，由韦东山 [百问网](https://www.100ask.net) 开发团队研发。目的是为大家提供一个 **免费、优质、系统** 的 LVGL 学习教程(目前基于 lvgl 8.1 版本)，资料源码全部开源(MIT License)，祝你学习愉快！
 
