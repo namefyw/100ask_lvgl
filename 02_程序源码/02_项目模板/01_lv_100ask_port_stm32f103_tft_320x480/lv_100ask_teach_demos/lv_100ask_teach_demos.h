@@ -31,14 +31,14 @@ extern "C" {
 #include "../lv_100ask_teach_demos_conf.h"
 #endif
 
-#include "src/lv_100ask_demo_section_1/lv_100ask_demo_section_1.h"
+#include "src/lv_100ask_demo_course_1_2_1/lv_100ask_demo_course_1_2_1.h"
 
 
 /*********************
  *      DEFINES
  *********************/
 /*Test  lvgl version*/
-#if LV_VERSION_CHECK(8, 0, 0) == 0
+#if LV_VERSION_CHECK(8, 1, 0) == 0
 #error "lv_100ask_teach_demos: Wrong lvgl version"
 #endif
 

@@ -1,6 +1,6 @@
 /**
  * @file lv_100ask_teach_demos_conf.h
- * Configuration file for v8.1.0-dev
+ * Configuration file for v8.1.0
  *
  */
 /*
@@ -25,7 +25,7 @@
 /*Show some widget*/
 
 /* Section 1 */
-#define LV_USE_100ASK_DEMO_SECTION_1      0
+#define LV_USE_100ASK_DEMO_COURSE_1_2_1      0
 
 
 

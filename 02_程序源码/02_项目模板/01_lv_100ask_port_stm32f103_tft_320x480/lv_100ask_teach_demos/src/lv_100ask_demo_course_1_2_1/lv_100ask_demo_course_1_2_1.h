@@ -1,5 +1,5 @@
-#ifndef LV_100ASK_DEMO_SECTION_1_H
-#define LV_100ASK_DEMO_SECTION_1_H
+#ifndef LV_100ASK_DEMO_COURSE_1_3_1_H
+#define LV_100ASK_DEMO_COURSE_1_3_1_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +23,7 @@ extern "C" {
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
-void lv_100ask_demo_section_1(void);
+void lv_100ask_demo_course_1_3_1(void);
 
 
 
@@ -35,7 +35,7 @@ void lv_100ask_demo_section_1(void);
 } /* extern "C" */
 #endif
 
-#endif /* LV_100ASK_DEMO_SECTION_1_H */
+#endif /* LV_100ASK_DEMO_COURSE_1_3_1_H */
 
 
 

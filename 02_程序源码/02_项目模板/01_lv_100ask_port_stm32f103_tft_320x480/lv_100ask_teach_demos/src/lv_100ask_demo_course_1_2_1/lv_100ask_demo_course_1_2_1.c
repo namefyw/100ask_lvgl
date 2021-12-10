@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file    lv_100ask_demo_section_1.c
+ * @file    lv_100ask_demo_course_1_2_1.c
  * @author  百问科技
  * @version V1.0
  * @date    2021-12-02
- * @brief	第一节的课堂代码
+ * @brief	1-2-1课的课堂代码
  ******************************************************************************
  * Change Logs:
  * Date           Author          Notes
@@ -24,10 +24,10 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if LV_USE_100ASK_DEMO_SECTION_1
+#if LV_USE_100ASK_DEMO_COURSE_1_2_1
 
 #include <stdio.h>
-#include "lv_100ask_demo_section_1.h"
+#include "lv_100ask_demo_course_1_2_1.h"
 
 
 /*********************
@@ -40,11 +40,16 @@
  **********************/
 
 
-void lv_100ask_demo_section_1(void)
+void lv_100ask_demo_course_1_2_1(void)
 {
-    lv_obj_t * obj = lv_btn_create(lv_scr_act());
-    lv_obj_center(obj);
+    lv_obj_t * obj = lv_obj_create(lv_scr_act());
+    lv_obj_set_size(obj, LV_PCT(20), LV_PCT(10));
+    lv_obj_align(obj, LV_ALIGN_CENTER, 0, 0);
+
+    lv_obj_t * label = lv_label_create(obj);
+    lv_label_set_text(label, "Hello, LVGL!");
+    lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
 }
 
 
-#endif /* LV_USE_100ASK_DEMO_SECTION_1 */
+#endif /* LV_USE_100ASK_DEMO_COURSE_1_2_1 */
