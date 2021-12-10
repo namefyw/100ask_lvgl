@@ -25,6 +25,7 @@
 4. 跟着教程学习 lvgl widgets 的功能和用法(初级教程)
 5. 跟着教程学习 lvgl 背后的实现原理(高级教程)
 6. 将你的 lvgl 代码移植到你的开发板或硬件平台上运行(移植教程)
+6. LVGL+RTOS专题(freeRTOS、RTTHread)
 
 
 # 开始学习(Get started)
