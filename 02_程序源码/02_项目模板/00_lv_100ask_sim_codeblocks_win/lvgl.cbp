@@ -41,10 +41,10 @@
 		</Compiler>
 		<Unit filename="lv_100ask_teach_demos/lv_100ask_teach_demos.h" />
 		<Unit filename="lv_100ask_teach_demos/lv_100ask_teach_demos_conf_template.h" />
-		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_1_2_1/lv_100ask_demo_course_1_2_1.c">
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_1_3_1/lv_100ask_demo_course_1_3_1.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_1_2_1/lv_100ask_demo_course_1_2_1.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_1_3_1/lv_100ask_demo_course_1_3_1.h" />
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_teach_demos.h" />
 		<Unit filename="lv_100ask_teach_demos_conf.h" />
 		<Unit filename="lv_conf.h" />

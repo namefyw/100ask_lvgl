@@ -51,7 +51,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     lv_win32_init(hInstance, SW_SHOWNORMAL, 1024, 600, NULL);
 
     /*Run the demo*/
-    lv_100ask_demo_course_1_2_1();
+    lv_100ask_demo_course_1_3_1();
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

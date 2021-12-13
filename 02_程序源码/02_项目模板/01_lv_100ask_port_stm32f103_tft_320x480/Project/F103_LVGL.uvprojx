@@ -1390,9 +1390,9 @@
           <GroupName>lv_100ask_teach_demos</GroupName>
           <Files>
             <File>
-              <FileName>lv_100ask_demo_course_1_2_1.c</FileName>
+              <FileName>lv_100ask_demo_course_1_3_1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\lv_100ask_teach_demos\src\lv_100ask_demo_course_1_2_1\lv_100ask_demo_course_1_2_1.c</FilePath>
+              <FilePath>..\lv_100ask_teach_demos\src\lv_100ask_demo_course_1_3_1\lv_100ask_demo_course_1_3_1.c</FilePath>
             </File>
           </Files>
         </Group>
