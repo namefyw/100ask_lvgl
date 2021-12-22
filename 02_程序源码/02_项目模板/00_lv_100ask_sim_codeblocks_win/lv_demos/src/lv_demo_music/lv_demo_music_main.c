@@ -81,7 +81,7 @@ static uint32_t spectrum_i_pause = 0;
 static uint32_t bar_ofs = 0;
 static uint32_t spectrum_lane_ofs_start = 0;
 static uint32_t bar_rot = 0;
-static uint32_t time;
+static uint32_t time_act;
 static lv_timer_t *  sec_counter_timer;
 static const lv_font_t * font_small;
 static const lv_font_t * font_large;
@@ -101,6 +101,22 @@ static const uint16_t rnd_array[30] = {994, 285, 553, 11, 792, 707, 966, 641, 85
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+
+/*
+ * Callback adapter function to convert parameter types to avoid compile-time
+ * warning.
+ */
+static void _img_set_zoom_anim_cb(void * obj, int32_t zoom) {
+  lv_img_set_zoom((lv_obj_t*)obj, (uint16_t)zoom);
+}
+
+/*
+ * Callback adapter function to convert parameter types to avoid compile-time
+ * warning.
+ */
+static void _obj_set_x_anim_cb(void * obj, int32_t x) {
+  lv_obj_set_x((lv_obj_t*)obj, (lv_coord_t)x);
+}
 
 lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
 {
@@ -195,10 +211,10 @@ lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
 
     lv_obj_set_grid_dsc_array(cont, grid_cols, grid_rows);
     lv_obj_set_style_grid_row_align(cont, LV_GRID_ALIGN_SPACE_BETWEEN, 0);
-    lv_obj_set_grid_cell(title_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_ALIGN_CENTER, 2, 1);
-    lv_obj_set_grid_cell(icon_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_ALIGN_CENTER, 4, 1);
-    lv_obj_set_grid_cell(ctrl_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_ALIGN_CENTER, 6, 1);
-    lv_obj_set_grid_cell(handle_box, LV_GRID_ALIGN_STRETCH, 0, 2, LV_ALIGN_CENTER, 8, 1);
+    lv_obj_set_grid_cell(title_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_GRID_ALIGN_CENTER, 2, 1);
+    lv_obj_set_grid_cell(icon_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_GRID_ALIGN_CENTER, 4, 1);
+    lv_obj_set_grid_cell(ctrl_box, LV_GRID_ALIGN_STRETCH, 0, 1, LV_GRID_ALIGN_CENTER, 6, 1);
+    lv_obj_set_grid_cell(handle_box, LV_GRID_ALIGN_STRETCH, 0, 2, LV_GRID_ALIGN_CENTER, 8, 1);
     lv_obj_set_grid_cell(spectrum_obj, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_CENTER, 1, 9);
 #endif
 
@@ -238,7 +254,7 @@ lv_obj_t * _lv_demo_music_main_create(lv_obj_t * parent)
     lv_anim_set_time(&a, 1000);
     lv_anim_set_delay(&a, INTRO_TIME + 1000);
     lv_anim_set_values(&a, 1, LV_IMG_ZOOM_NONE);
-    lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t) lv_img_set_zoom);
+    lv_anim_set_exec_cb(&a, _img_set_zoom_anim_cb);
     lv_anim_set_ready_cb(&a, NULL);
     lv_anim_start(&a);
 
@@ -624,7 +640,7 @@ static lv_obj_t * create_handle(lv_obj_t * parent)
 static void track_load(uint32_t id)
 {
     spectrum_i = 0;
-    time = 0;
+    time_act = 0;
     spectrum_i_pause = 0;
     lv_slider_set_value(slider_obj, 0, LV_ANIM_OFF);
     lv_label_set_text(time_obj, "0:00");
@@ -663,7 +679,7 @@ static void track_load(uint32_t id)
         lv_anim_set_values(&a, 0, LV_HOR_RES / 2);
     }
 #endif
-    lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t) lv_obj_set_x);
+    lv_anim_set_exec_cb(&a, _obj_set_x_anim_cb);
     lv_anim_set_ready_cb(&a, lv_obj_del_anim_ready_cb);
     lv_anim_start(&a);
 
@@ -671,7 +687,7 @@ static void track_load(uint32_t id)
     lv_anim_set_var(&a, album_img_obj);
     lv_anim_set_time(&a, 500);
     lv_anim_set_values(&a, LV_IMG_ZOOM_NONE, LV_IMG_ZOOM_NONE / 2);
-    lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t) lv_img_set_zoom);
+    lv_anim_set_exec_cb(&a, _img_set_zoom_anim_cb);
     lv_anim_set_ready_cb(&a, NULL);
     lv_anim_start(&a);
 
@@ -683,7 +699,7 @@ static void track_load(uint32_t id)
     lv_anim_set_time(&a, 500);
     lv_anim_set_delay(&a, 100);
     lv_anim_set_values(&a, LV_IMG_ZOOM_NONE / 4, LV_IMG_ZOOM_NONE);
-    lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t) lv_img_set_zoom);
+    lv_anim_set_exec_cb(&a, _img_set_zoom_anim_cb);
     lv_anim_set_ready_cb(&a, NULL);
     lv_anim_start(&a);
 }
@@ -934,9 +950,9 @@ static void next_click_event_cb(lv_event_t * e)
 
 static void timer_cb(lv_timer_t * t)
 {
-    time++;
-    lv_label_set_text_fmt(time_obj, "%d:%02d", time / 60, time % 60);
-    lv_slider_set_value(slider_obj, time, LV_ANIM_ON);
+    time_act++;
+    lv_label_set_text_fmt(time_obj, "%d:%02d", time_act / 60, time_act % 60);
+    lv_slider_set_value(slider_obj, time_act, LV_ANIM_ON);
 }
 
 static void spectrum_end_cb(lv_anim_t * a)

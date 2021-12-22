@@ -25,7 +25,7 @@
 /*Show some widget*/
 
 /* Section 1 */
-#define LV_USE_100ASK_DEMO_COURSE_1_3_1      0
+#define LV_USE_100ASK_DEMO_COURSE_2_1_1      0
 
 
 
