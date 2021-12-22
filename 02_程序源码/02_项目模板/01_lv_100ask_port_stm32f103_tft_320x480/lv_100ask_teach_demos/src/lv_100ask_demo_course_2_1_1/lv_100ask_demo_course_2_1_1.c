@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file    lv_100ask_demo_course_1_3_1.c
+ * @file    lv_100ask_demo_course_2_1_1.c
  * @author  百问科技
  * @version V1.0
  * @date    2021-12-02
- * @brief	1-3-1课的课堂代码
+ * @brief	2_1_1课的课堂代码
  ******************************************************************************
  * Change Logs:
  * Date           Author          Notes
@@ -24,10 +24,10 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if LV_USE_100ASK_DEMO_COURSE_1_3_1
+#if LV_USE_100ASK_DEMO_COURSE_2_1_1
 
 #include <stdio.h>
-#include "lv_100ask_demo_course_1_3_1.h"
+#include "lv_100ask_demo_course_2_1_1.h"
 
 
 /*********************
@@ -40,7 +40,7 @@
  **********************/
 
 
-void lv_100ask_demo_course_1_3_1(void)
+void lv_100ask_demo_course_2_1_1(void)
 {
     lv_obj_t * obj = lv_obj_create(lv_scr_act());
     lv_obj_set_size(obj, LV_PCT(20), LV_PCT(10));
@@ -52,4 +52,4 @@ void lv_100ask_demo_course_1_3_1(void)
 }
 
 
-#endif /* LV_USE_100ASK_DEMO_COURSE_1_3_1 */
+#endif /* LV_USE_100ASK_DEMO_COURSE_2_1_1 */

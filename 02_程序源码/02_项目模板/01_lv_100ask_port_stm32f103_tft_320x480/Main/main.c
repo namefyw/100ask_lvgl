@@ -101,7 +101,7 @@ int main(void)
 
 	printf(">>>100ASK LVGL DEMO!\n\r");
 	
-	lv_100ask_demo_course_1_3_1();
+	lv_100ask_demo_course_2_1_1();
 	
     while(1)
     {

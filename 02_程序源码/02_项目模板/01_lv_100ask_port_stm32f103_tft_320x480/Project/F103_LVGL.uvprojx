@@ -339,7 +339,7 @@
               <MiscControls>--diag_suppress=188 --diag_suppress=260 --diag_suppress=111</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Main;..\Core;..\Driver;..\SDK\CMSIS\Device\ST\STM32F1xx\Include;..\SDK\CMSIS\Include;..\SDK\STM32F1xx_HAL_Driver\Src;..\SDK\STM32F1xx_HAL_Driver\Inc;..\LCD;..\..\Boot_UI_Ftafs_V1.4_branch_biubiu;..\lvgl;..\lvgl\src;..\lvgl\src\core;..\lvgl\src\draw;..\lvgl\src\font;..\lvgl\src\hal;..\lvgl\src\misc;..\lvgl\src\themes;..\lvgl\src\widgets;..\lvgl\src\extra;..\lvgl\src\extra\layouts;..\lvgl\src\extra\layouts\flex;..\lvgl\src\extra\layouts\grid;..\lvgl\src\extra\libs;..\lvgl\src\extra\others;..\lvgl\src\extra\themes;..\lvgl\src\extra\widgets;..\lv_100ask_teach_demos;..\lv_100ask_teach_demos\src;..\lv_100ask_teach_demos\src\lv_100ask_demo_section_1</IncludePath>
+              <IncludePath>..\Main;..\Core;..\Driver;..\SDK\CMSIS\Device\ST\STM32F1xx\Include;..\SDK\CMSIS\Include;..\SDK\STM32F1xx_HAL_Driver\Src;..\SDK\STM32F1xx_HAL_Driver\Inc;..\LCD;..\..\Boot_UI_Ftafs_V1.4_branch_biubiu;..\lvgl;..\lvgl\src;..\lvgl\src\core;..\lvgl\src\draw;..\lvgl\src\font;..\lvgl\src\hal;..\lvgl\src\misc;..\lvgl\src\themes;..\lvgl\src\widgets;..\lvgl\src\extra;..\lvgl\src\extra\layouts;..\lvgl\src\extra\layouts\flex;..\lvgl\src\extra\layouts\grid;..\lvgl\src\extra\libs;..\lvgl\src\extra\others;..\lvgl\src\extra\themes;..\lvgl\src\extra\widgets;..\lv_100ask_teach_demos;..\lv_100ask_teach_demos\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1390,9 +1390,9 @@
           <GroupName>lv_100ask_teach_demos</GroupName>
           <Files>
             <File>
-              <FileName>lv_100ask_demo_course_1_3_1.c</FileName>
+              <FileName>lv_100ask_demo_course_2_1_1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\lv_100ask_teach_demos\src\lv_100ask_demo_course_1_3_1\lv_100ask_demo_course_1_3_1.c</FilePath>
+              <FilePath>..\lv_100ask_teach_demos\src\lv_100ask_demo_course_2_1_1\lv_100ask_demo_course_2_1_1.c</FilePath>
             </File>
           </Files>
         </Group>
