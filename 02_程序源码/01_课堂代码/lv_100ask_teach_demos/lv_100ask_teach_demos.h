@@ -32,6 +32,7 @@ extern "C" {
 #endif
 
 #include "src/lv_100ask_demo_course_2_1_1/lv_100ask_demo_course_2_1_1.h"
+#include "src/lv_100ask_demo_course_2_2_2/lv_100ask_demo_course_2_2_2.h"
 
 
 /*********************

@@ -26,6 +26,7 @@
 
 /* Section 1 */
 #define LV_USE_100ASK_DEMO_COURSE_2_1_1      1
+#define LV_USE_100ASK_DEMO_COURSE_2_2_2      1
 
 
 
