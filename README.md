@@ -47,7 +47,7 @@
 
 ## 单片机项目成品展示
 
-STM32F103运行 LVGL 示例：
+STM32F103运行 LVGL 演示视频：[https://www.bilibili.com/video/BV1im4y1X7g4](https://www.bilibili.com/video/BV1im4y1X7g4)
 
 ![https://img-blog.csdnimg.cn/20210507170140434.png](https://img-blog.csdnimg.cn/20210507170140434.png)
 
