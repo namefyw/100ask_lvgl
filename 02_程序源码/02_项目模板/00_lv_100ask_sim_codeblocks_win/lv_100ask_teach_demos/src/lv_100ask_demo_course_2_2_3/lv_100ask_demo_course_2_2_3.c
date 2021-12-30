@@ -24,7 +24,7 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if LV_USE_100ASK_DEMO_COURSE_2_2_3
+#if 1
 
 #include <stdio.h>
 #include "lv_100ask_demo_course_2_2_3.h"
@@ -45,7 +45,7 @@ void lv_100ask_demo_course_2_2_3(void)
     lv_obj_t * obj = lv_obj_create(lv_scr_act());
     //lv_obj_set_x(obj, 200);
     //lv_obj_set_y(obj, -50);
-    //lv_obj_set_pos(obj, 200, 200);
+    lv_obj_set_pos(obj, 1300, 600);
     //lv_obj_set_align(obj, LV_ALIGN_CENTER);
     //lv_obj_align(obj, LV_ALIGN_CENTER, 100, 100);
 
