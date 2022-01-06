@@ -54,9 +54,14 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     LV_LOG_USER("LVGL initialization completed!");
     //printf("www.100ask.net: Lvgl initialization complete!\n");
 
+
     /*Run the demo*/
     //lv_100ask_demo_course_2_1_1();
-	lv_100ask_demo_course_2_2_2();
+	//lv_100ask_demo_course_2_2_2();
+	//lv_100ask_demo_course_2_2_3();
+	//lv_100ask_demo_course_2_2_4();
+	lv_100ask_demo_course_2_2_5();
+
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

@@ -51,6 +51,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_2/lv_100ask_demo_course_2_2_2.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_3/lv_100ask_demo_course_2_2_3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_3/lv_100ask_demo_course_2_2_3.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_4/lv_100ask_demo_course_2_2_4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_4/lv_100ask_demo_course_2_2_4.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_5/lv_100ask_demo_course_2_2_5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_5/lv_100ask_demo_course_2_2_5.h" />
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_teach_demos.h" />
 		<Unit filename="lv_100ask_teach_demos_conf.h" />
 		<Unit filename="lv_conf.h" />
