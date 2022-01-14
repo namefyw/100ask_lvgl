@@ -32,6 +32,9 @@
 #define LV_USE_100ASK_DEMO_COURSE_2_2_5      0
 #define LV_USE_100ASK_DEMO_COURSE_2_2_6      0
 
+#define LV_USE_100ASK_DEMO_COURSE_3_1_1      0
+#define LV_USE_100ASK_DEMO_COURSE_3_1_2      0
+
 
 
 #endif /*LV_100ASK_TEACH_DEMOS_CONF_H*/

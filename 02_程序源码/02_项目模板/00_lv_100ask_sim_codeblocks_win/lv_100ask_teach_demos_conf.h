@@ -30,6 +30,10 @@
 #define LV_USE_100ASK_DEMO_COURSE_2_2_3      1
 #define LV_USE_100ASK_DEMO_COURSE_2_2_4      1
 #define LV_USE_100ASK_DEMO_COURSE_2_2_5      1
+#define LV_USE_100ASK_DEMO_COURSE_2_2_6      1
+
+#define LV_USE_100ASK_DEMO_COURSE_3_1_1      1
+#define LV_USE_100ASK_DEMO_COURSE_3_1_2      1
 
 
 

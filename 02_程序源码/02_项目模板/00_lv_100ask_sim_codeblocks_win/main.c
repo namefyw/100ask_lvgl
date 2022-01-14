@@ -42,6 +42,7 @@ static int tick_thread(void *data);
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine, int nCmdShow)
 {
     /*Initialize LittlevGL*/
@@ -61,7 +62,10 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
 	//lv_100ask_demo_course_2_2_3();
 	//lv_100ask_demo_course_2_2_4();
 	//lv_100ask_demo_course_2_2_5();
-	lv_100ask_demo_course_2_2_6();
+	//lv_100ask_demo_course_2_2_6();
+
+	//lv_100ask_demo_course_3_1_1();
+	//lv_100ask_demo_course_3_1_2();
 
 
     while(!lv_win32_quit_signal) {
