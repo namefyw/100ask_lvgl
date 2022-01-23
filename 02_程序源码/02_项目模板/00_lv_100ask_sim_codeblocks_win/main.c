@@ -67,6 +67,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
 	//lv_100ask_demo_course_3_1_1();
 	//lv_100ask_demo_course_3_1_2();
 	//lv_100ask_demo_course_3_2_1();
+	//lv_100ask_demo_course_3_3_1();
 
 
     while(!lv_win32_quit_signal) {
