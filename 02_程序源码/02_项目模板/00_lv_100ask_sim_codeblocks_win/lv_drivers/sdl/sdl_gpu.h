@@ -62,19 +62,27 @@ void sdl_gpu_disp_drv_init(lv_disp_drv_t *driver);
 
 /**
  * Flush a buffer to the marked area
- * @param drv pointer to driver where this function belongs
+ * @param disp_drv pointer to driver where this function belongs
  * @param area an area where to copy `color_p`
- * @param color_p an array of pixel to copy to the `area` part of the screen
+ * @param color_p an array of pixels to copy to the `area` part of the screen
  */
 void sdl_display_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p);
 
 /**
  * Flush a buffer to the marked area
- * @param drv pointer to driver where this function belongs
+ * @param disp_drv pointer to driver where this function belongs
  * @param area an area where to copy `color_p`
- * @param color_p an array of pixel to copy to the `area` part of the screen
+ * @param color_p an array of pixels to copy to the `area` part of the screen
  */
 void sdl_display_flush2(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p);
+
+/**
+ * Resize SDL display
+ * @param disp pointer to lvgl display object
+ * @param width new display width in pixels
+ * @param height new display height in pixels
+ */
+void sdl_display_resize(lv_disp_t *disp, int width, int height);
 
 /**
  * Get the current position and state of the mouse
