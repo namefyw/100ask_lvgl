@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
  * @file    lv_100ask_demo_course_3_2_1.c
- * @author  °ÙÎÊ¿Æ¼¼
+ * @author  ç™¾é—®ç§‘æŠ€
  * @version V1.0
  * @date    2022-01-20
- * @brief	3_2_1 ¿ÎµÄ¿ÎÌÃ´úÂë
+ * @brief	3_2_1 è¯¾çš„è¯¾å ‚ä»£ç 
  ******************************************************************************
  * Change Logs:
  * Date           Author          Notes
@@ -12,7 +12,7 @@
  ******************************************************************************
  * @attention
  *
- * Copyright (C) 2008-2021 ÉîÛÚ°ÙÎÊÍø¿Æ¼¼ÓĞÏŞ¹«Ë¾<https://www.100ask.net/>
+ * Copyright (C) 2008-2021 æ·±åœ³ç™¾é—®ç½‘ç§‘æŠ€æœ‰é™å…¬å¸<https://www.100ask.net/>
  * All rights reserved
  *
  ******************************************************************************
@@ -24,9 +24,8 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if 1 // LV_USE_100ASK_DEMO_COURSE_3_2_1
+#if LV_USE_100ASK_DEMO_COURSE_3_2_1
 
-#include <stdio.h>
 #include "lv_100ask_demo_course_3_2_1.h"
 
 
@@ -40,8 +39,8 @@
  **********************/
 static void btn_toggle_event_cb(lv_event_t * e)
 {
-    lv_obj_t * obj = lv_event_get_target(e);        // »ñÈ¡´¥·¢ÊÂ¼şµÄ²¿¼ş(¶ÔÏó)
-    lv_event_code_t code = lv_event_get_code(e);    // »ñÈ¡µ±Ç°²¿¼ş(¶ÔÏó)´¥·¢µÄÊÂ¼ş´úÂë
+    lv_obj_t * obj = lv_event_get_target(e);        // è·å–è§¦å‘äº‹ä»¶çš„éƒ¨ä»¶(å¯¹è±¡)
+    lv_event_code_t code = lv_event_get_code(e);    // è·å–å½“å‰éƒ¨ä»¶(å¯¹è±¡)è§¦å‘çš„äº‹ä»¶ä»£ç 
 
     switch(code){
         case LV_EVENT_VALUE_CHANGED:
@@ -55,17 +54,17 @@ static void btn_toggle_event_cb(lv_event_t * e)
 
 void lv_100ask_demo_course_3_2_1(void)
 {
-    /* ´´½¨Ò»¸öbtn²¿¼ş(¶ÔÏó) */
-    lv_obj_t * btn = lv_btn_create(lv_scr_act());       // ´´½¨Ò»¸öbtn²¿¼ş(¶ÔÏó),ËûµÄ¸¸¶ÔÏóÊÇ»î¶¯ÆÁÄ»¶ÔÏó
+    /* åˆ›å»ºä¸€ä¸ªbtnéƒ¨ä»¶(å¯¹è±¡) */
+    lv_obj_t * btn = lv_btn_create(lv_scr_act());       // åˆ›å»ºä¸€ä¸ªbtnéƒ¨ä»¶(å¯¹è±¡),ä»–çš„çˆ¶å¯¹è±¡æ˜¯æ´»åŠ¨å±å¹•å¯¹è±¡
 
-    // ĞŞ¸Ä°´Å¥²¿¼ş£¨¶ÔÏó£©¾ØĞÎ±³¾°²¿·ÖµÄÑùÊ½
+    // ä¿®æ”¹æŒ‰é’®éƒ¨ä»¶ï¼ˆå¯¹è±¡ï¼‰çŸ©å½¢èƒŒæ™¯éƒ¨åˆ†çš„æ ·å¼
     //lv_obj_set_style_bg_color(btn, lv_color_hex(0x1e1e1e), LV_PART_MAIN | LV_STATE_PRESSED);
 
-    // ´ò¿ªÁË LV_OBJ_FLAG_CHECKABLE £¬µ±¶ÔÏó±»µã»÷Ê±ÓĞÑ¡ÖĞÇĞ»»(Toggle)×´Ì¬µÄĞ§¹û
-    // Æä´¥·¢µÄÊÇ LV_EVENT_VALUE_CHANGED ÊÂ¼şÀàĞÍ
+    // æ‰“å¼€äº† LV_OBJ_FLAG_CHECKABLE ï¼Œå½“å¯¹è±¡è¢«ç‚¹å‡»æ—¶æœ‰é€‰ä¸­åˆ‡æ¢(Toggle)çŠ¶æ€çš„æ•ˆæœ
+    // å…¶è§¦å‘çš„æ˜¯ LV_EVENT_VALUE_CHANGED äº‹ä»¶ç±»å‹
     //lv_obj_add_flag(btn, LV_OBJ_FLAG_CHECKABLE);
 
-    // ´¦Àí LV_EVENT_VALUE_CHANGED ÊÂ¼şÀàĞÍÊ¾Àı
+    // å¤„ç† LV_EVENT_VALUE_CHANGED äº‹ä»¶ç±»å‹ç¤ºä¾‹
     //lv_obj_add_event_cb(btn, btn_toggle_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
 }
 

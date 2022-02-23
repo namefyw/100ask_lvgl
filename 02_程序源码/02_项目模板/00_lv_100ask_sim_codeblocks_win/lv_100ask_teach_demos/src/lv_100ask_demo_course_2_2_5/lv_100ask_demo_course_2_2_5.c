@@ -24,9 +24,8 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if 1 // LV_USE_100ASK_DEMO_COURSE_2_2_5
+#if LV_USE_100ASK_DEMO_COURSE_2_2_5
 
-#include <stdio.h>
 #include "lv_100ask_demo_course_2_2_5.h"
 
 

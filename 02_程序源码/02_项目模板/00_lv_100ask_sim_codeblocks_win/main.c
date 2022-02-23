@@ -11,6 +11,7 @@
 #include <unistd.h>
 
 #include "lvgl/lvgl.h"
+#include "lv_100ask_teach_demos/lv_100ask_teach_demos.h"
 #include "lv_demos/src/lv_demo_widgets/lv_demo_widgets.h"
 #include "lv_drivers/win32drv/win32drv.h"
 
