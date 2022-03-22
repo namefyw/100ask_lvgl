@@ -28,6 +28,8 @@
 
 #include "lv_100ask_demo_course_3_6_1.h"
 
+// 用Windows PC模拟器键盘或鼠标需要包含此头文件
+//#include "lv_drivers/win32drv/win32drv.h"
 
 /*********************
  *      DEFINES
@@ -98,8 +100,29 @@ static void dd_event_handler(lv_event_t * e)
 
 void lv_100ask_demo_course_3_6_1(void)
 {
+
+#if 0
+    // 使用物理按键控制，注意上面要包含 "lv_drivers/win32drv/win32drv.h"，
+    // LVGL按键控制，视频教程： https://www.bilibili.com/video/BV1Ya411r7K2?p=19
+    // 创建一个组，稍后将需要使用键盘或编码器或按钮控制的部件(对象)添加进去，并且将输入设备和组关联
+    // 如果将这个组设置为默认组，那么对于那些在创建时会添加到默认组的部件(对象)就可以省略 lv_group_add_obj()
+    lv_group_t * g = lv_group_create();
+
+    // 将上面创建的组设置为默认组
+    // 如果稍后创建的部件(对象)，使用默认组那必须要在其创建之前设置好默认组，否则不生效
+    lv_group_set_default(g);
+
+    // 将输入设备和组关联(使用前先打开上面注释掉的头文件)
+    lv_indev_set_group(lv_win32_keypad_device_object, g);     // 键盘
+    lv_indev_set_group(lv_win32_encoder_device_object, g);      // 鼠标上的滚轮(编码器)
+
+#endif // 0
+
     /* 创建一个 lv_dropdown 部件(对象) */
     lv_obj_t * dd = lv_dropdown_create(lv_scr_act());    // 创建一个 lv_dropdown 部件(对象),他的父对象是活动屏幕对象
+
+    // 将部件(对象)添加到组，如果设置了默认组，这里可以省略，因为 lv_dropdown 是 LV_OBJ_CLASS_GROUP_DEF_TRUE
+    //lv_group_add_obj(g, dd);
 
 #if 1
     lv_dropdown_set_options(dd, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10");  // 写法1：添加选项，索引从0开始
@@ -138,15 +161,16 @@ void lv_100ask_demo_course_3_6_1(void)
     //lv_dropdown_set_symbol(dd, LV_SYMBOL_CALL);   // 设置按钮显示的字符
     //lv_dropdown_set_text(dd, "Some text");        // 设置当选中选项之后展示的内容，如果没有这句，那么选中的是什么就展示什么
 
-#if 1
-    // 官方参考示例：  http://lvgl.100ask.net/8.2/widgets/core/dropdown.html#drop-down-in-four-directions
+#if 0
     // 改变列表创建的方向
     // 下拉列表按钮上的符号会跟随 所设置的方向自动调整(左侧或右侧)
+    // 官方参考示例：  http://lvgl.100ask.net/8.2/widgets/core/dropdown.html#drop-down-in-four-directions
+
     lv_dropdown_set_dir(dd, LV_DIR_LEFT);     // 左侧
     lv_dropdown_set_dir(dd, LV_DIR_RIGHT);    // 右侧
     lv_dropdown_set_dir(dd, LV_DIR_TOP);      // 顶部
     lv_dropdown_set_dir(dd, LV_DIR_BOTTOM);   // 底部
-#endif // 1
+#endif // 0
 
     // 添加事件
     // 当我们点击下拉列表时，会触发 LV_EVENT_CLICKED 事件类型，并且会创建出一个列表，列表中展示我们在前面设置的选项供我们选择
