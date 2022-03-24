@@ -45,6 +45,7 @@ extern "C" {
 #include "src/lv_100ask_demo_course_3_4_1/lv_100ask_demo_course_3_4_1.h"
 #include "src/lv_100ask_demo_course_3_5_1/lv_100ask_demo_course_3_5_1.h"
 #include "src/lv_100ask_demo_course_3_6_1/lv_100ask_demo_course_3_6_1.h"
+#include "src/lv_100ask_demo_course_3_7_1/lv_100ask_demo_course_3_7_1.h"
 
 
 
