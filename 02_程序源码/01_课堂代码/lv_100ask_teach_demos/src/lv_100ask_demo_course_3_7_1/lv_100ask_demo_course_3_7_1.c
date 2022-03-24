@@ -41,7 +41,7 @@
  **********************/
 
 
-// 通过其他部件打开或关闭下拉列表
+// 通过其他部件选择
 static void btn_event_handler(lv_event_t * e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -96,10 +96,10 @@ void lv_100ask_demo_course_3_7_1(void)
     lv_indev_set_group(lv_win32_encoder_device_object, g);    // 鼠标上的滚轮(编码器)
 #endif // 0
 
-    /* 创建一个 lv_dropdown 部件(对象) */
-    lv_obj_t * roller = lv_roller_create(lv_scr_act());    // 创建一个 lv_dropdown 部件(对象),他的父对象是活动屏幕对象
+    /* 创建一个 lv_roller 部件(对象) */
+    lv_obj_t * roller = lv_roller_create(lv_scr_act());    // 创建一个 lv_roller 部件(对象),他的父对象是活动屏幕对象
 
-    // 将部件(对象)添加到组，如果设置了默认组，这里可以省略，因为 lv_dropdown 是 LV_OBJ_CLASS_GROUP_DEF_TRUE
+    // 将部件(对象)添加到组，如果设置了默认组，这里可以省略，因为 lv_roller 是 LV_OBJ_CLASS_GROUP_DEF_TRUE
     //lv_group_add_obj(g, roller);
 
 #if 1
@@ -124,10 +124,10 @@ void lv_100ask_demo_course_3_7_1(void)
     // 设置默认选中的选项
     lv_roller_set_selected(roller, 3, LV_ANIM_ON);
 
-#if 1
+#if 0
     // 设置可见的选项个数(行数)
     // 如果滚轮的字体、行距、边框宽度等发生变化，则需要再次调用此函数以重新进行调整。
-    //lv_roller_set_visible_row_count(roller, 2);
+    lv_roller_set_visible_row_count(roller, 2);
 
 #if 0
     // 可见行也可以通过调整高度设置，但是一般不会这么做
@@ -153,7 +153,7 @@ void lv_100ask_demo_course_3_7_1(void)
     lv_roller_set_options(roller, "一\n二\n三\n四\n五\n六\n七\n八\n九\n十", LV_ROLLER_MODE_NORMAL);     // 设置中文选项
 #endif // 0
 
-#if 0
+#if 0 
     // 改变选项中文字位置
     //lv_obj_set_style_text_align(roller, LV_TEXT_ALIGN_LEFT, 0);   // 左对齐
     //lv_obj_set_style_text_align(roller, LV_TEXT_ALIGN_RIGHT, 0);  // 右对齐
