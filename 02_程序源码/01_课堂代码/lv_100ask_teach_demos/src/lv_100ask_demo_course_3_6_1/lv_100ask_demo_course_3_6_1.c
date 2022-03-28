@@ -144,15 +144,27 @@ void lv_100ask_demo_course_3_6_1(void)
     //lv_obj_align(dd, LV_ALIGN_CENTER, 0, 0);            // 方法2：让对象居中，较为灵活
 
 #if 0
-    // 获取下拉列表中的列表来修改样式或其他修改(显示中文)
+    // 获取下拉列表中的列表来修改样式或其他修改
     lv_obj_t * dd_list = lv_dropdown_get_list(dd);
 
+#if 0
+    // 显示中文
     // 修改列表所使用的字体，如果要展示中文则要在这里设置
     LV_FONT_DECLARE(lv_font_source_han_sans_bold_14);   // 声明字体，可以放到函数外部
-    lv_obj_set_style_text_font(dd, &lv_font_source_han_sans_bold_14, 0);        // 设置新的字体
-    lv_obj_set_style_text_font(dd_list, &lv_font_source_han_sans_bold_14, 0);   // 设置新的字体
+    lv_obj_set_style_text_font(dd, &lv_font_source_han_sans_bold_14, 0);        // 设置新的字体(下拉列表的按钮)
+    lv_obj_set_style_text_font(dd_list, &lv_font_source_han_sans_bold_14, 0);   // 设置新的字体(下拉列表中的列表)
     lv_dropdown_set_options(dd, "一\n二\n三\n四\n五\n六\n七\n八\n九\n十");      // 设置中文选项
     //lv_dropdown_set_symbol(dd, LV_SYMBOL_CALL);   // 注意：如果使用自定义的字库，并且你的字库中没有这些符号，那么下拉列表的符号就不会显示了
+#endif
+
+    // 使用内置字体
+    lv_obj_set_style_text_font(dd, &lv_font_montserrat_30, 0);          // 设置新的字体(下拉列表的按钮)
+    lv_obj_set_style_text_font(dd_list, &lv_font_montserrat_30, 0);     // 设置新的字体(下拉列表中的列表)
+
+    // 设置字体对齐位置
+    //lv_obj_set_style_text_align(dd, LV_TEXT_ALIGN_CENTER, 0);           // 这样设置下拉列表的按钮的文字对齐位置不会生效，可以在 LV_EVENT_DRAW_MAIN 事件中修改，但是不建议修改，详情请阅读 lv_dropdown.c 的源码
+    lv_obj_set_style_text_align(dd_list, LV_TEXT_ALIGN_RIGHT, 0);       // 设置下拉列表中的列表的文字对齐
+    
 #endif // 0
 
     //lv_dropdown_add_option(dd, "11", 10);         // 追加一个选项
