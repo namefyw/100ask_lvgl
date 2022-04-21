@@ -31,21 +31,21 @@ extern "C" {
 #include "../lv_100ask_teach_demos_conf.h"
 #endif
 
-#include "src/lv_100ask_demo_course_2_1_1/lv_100ask_demo_course_2_1_1.h"
-#include "src/lv_100ask_demo_course_2_2_2/lv_100ask_demo_course_2_2_2.h"
-#include "src/lv_100ask_demo_course_2_2_3/lv_100ask_demo_course_2_2_3.h"
-#include "src/lv_100ask_demo_course_2_2_4/lv_100ask_demo_course_2_2_4.h"
-#include "src/lv_100ask_demo_course_2_2_5/lv_100ask_demo_course_2_2_5.h"
-#include "src/lv_100ask_demo_course_2_2_6/lv_100ask_demo_course_2_2_6.h"
+#include "src/lv_100ask_demo_course_2_1_1/lv_100ask_demo_course_2_1_1.h"    // 基础对象(lv_obj)，"Hello, LVGL!"
+#include "src/lv_100ask_demo_course_2_2_2/lv_100ask_demo_course_2_2_2.h"    // 基础对象的大小(size)
+#include "src/lv_100ask_demo_course_2_2_3/lv_100ask_demo_course_2_2_3.h"    // 基础对象的位置(position)
+#include "src/lv_100ask_demo_course_2_2_4/lv_100ask_demo_course_2_2_4.h"    // 基础对象的盒子模型(border-box)
+#include "src/lv_100ask_demo_course_2_2_5/lv_100ask_demo_course_2_2_5.h"    // 基础对象的样式(styles)
+#include "src/lv_100ask_demo_course_2_2_6/lv_100ask_demo_course_2_2_6.h"    // 基础对象的事件(events)、事件冒泡
 
-#include "src/lv_100ask_demo_course_3_1_1/lv_100ask_demo_course_3_1_1.h"
-#include "src/lv_100ask_demo_course_3_1_2/lv_100ask_demo_course_3_1_2.h"
-#include "src/lv_100ask_demo_course_3_2_1/lv_100ask_demo_course_3_2_1.h"
-#include "src/lv_100ask_demo_course_3_3_1/lv_100ask_demo_course_3_3_1.h"
-#include "src/lv_100ask_demo_course_3_4_1/lv_100ask_demo_course_3_4_1.h"
-#include "src/lv_100ask_demo_course_3_5_1/lv_100ask_demo_course_3_5_1.h"
-#include "src/lv_100ask_demo_course_3_6_1/lv_100ask_demo_course_3_6_1.h"
-#include "src/lv_100ask_demo_course_3_7_1/lv_100ask_demo_course_3_7_1.h"
+#include "src/lv_100ask_demo_course_3_1_1/lv_100ask_demo_course_3_1_1.h"    // 组件(widgets)： 标签(label)的用法
+#include "src/lv_100ask_demo_course_3_1_2/lv_100ask_demo_course_3_1_2.h"    // 组件(widgets)： 标签(label)，显示中文
+#include "src/lv_100ask_demo_course_3_2_1/lv_100ask_demo_course_3_2_1.h"    // 组件(widgets)： 按钮(lv_btn)的用法
+#include "src/lv_100ask_demo_course_3_3_1/lv_100ask_demo_course_3_3_1.h"    // 组件(widgets)： 使用物理按键代替触摸(groups)
+#include "src/lv_100ask_demo_course_3_4_1/lv_100ask_demo_course_3_4_1.h"    // 组件(widgets)： 开关(lv_switch)的用法
+#include "src/lv_100ask_demo_course_3_5_1/lv_100ask_demo_course_3_5_1.h"    // 组件(widgets)： 复选框(lv_checkbox)的用法
+#include "src/lv_100ask_demo_course_3_6_1/lv_100ask_demo_course_3_6_1.h"    // 组件(widgets)： 下拉列表(lv_dropdown))的用法
+#include "src/lv_100ask_demo_course_3_7_1/lv_100ask_demo_course_3_7_1.h"    // 组件(widgets)： 滚轮(lv_roller)的用法
 
 
 

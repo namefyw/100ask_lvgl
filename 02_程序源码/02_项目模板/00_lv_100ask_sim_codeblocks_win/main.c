@@ -58,21 +58,21 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
 
 
     /*Run the demo*/
-    lv_100ask_demo_course_2_1_1();
-	//lv_100ask_demo_course_2_2_2();
-	//lv_100ask_demo_course_2_2_3();
-	//lv_100ask_demo_course_2_2_4();
-	//lv_100ask_demo_course_2_2_5();
-	//lv_100ask_demo_course_2_2_6();
+    lv_100ask_demo_course_2_1_1();      // 基础对象(lv_obj)，"Hello, LVGL!"
+	//lv_100ask_demo_course_2_2_2();    // 基础对象的大小(size)
+	//lv_100ask_demo_course_2_2_3();    // 基础对象的位置(position)
+	//lv_100ask_demo_course_2_2_4();    // 基础对象的盒子模型(border-box)
+	//lv_100ask_demo_course_2_2_5();    // 基础对象的样式(styles)
+	//lv_100ask_demo_course_2_2_6();    // 基础对象的事件(events)、事件冒泡
 
-	//lv_100ask_demo_course_3_1_1();
-	//lv_100ask_demo_course_3_1_2();
-	//lv_100ask_demo_course_3_2_1();
-	//lv_100ask_demo_course_3_3_1();
-	//lv_100ask_demo_course_3_4_1();
-	//lv_100ask_demo_course_3_5_1();
-	//lv_100ask_demo_course_3_6_1();
-	//lv_100ask_demo_course_3_7_1();
+	//lv_100ask_demo_course_3_1_1();    // 组件(widgets)： 标签(label)的用法
+	//lv_100ask_demo_course_3_1_2();    // 组件(widgets)： 标签(label)，显示中文
+	//lv_100ask_demo_course_3_2_1();    // 组件(widgets)： 按钮(lv_btn)的用法
+	//lv_100ask_demo_course_3_3_1();    // 组件(widgets)： 使用物理按键代替触摸(groups)
+	//lv_100ask_demo_course_3_4_1();    // 组件(widgets)： 开关(lv_switch)的用法
+	//lv_100ask_demo_course_3_5_1();    // 组件(widgets)： 复选框(lv_checkbox)的用法
+	//lv_100ask_demo_course_3_6_1();    // 组件(widgets)： 下拉列表(lv_dropdown))的用法
+	//lv_100ask_demo_course_3_7_1();    // 组件(widgets)： 滚轮(lv_roller)的用法
 
 
     while(!lv_win32_quit_signal) {
