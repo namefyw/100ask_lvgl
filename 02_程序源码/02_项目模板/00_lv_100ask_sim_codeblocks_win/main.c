@@ -73,6 +73,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
 	//lv_100ask_demo_course_3_5_1();    // 组件(widgets)： 复选框(lv_checkbox)的用法
 	//lv_100ask_demo_course_3_6_1();    // 组件(widgets)： 下拉列表(lv_dropdown))的用法
 	//lv_100ask_demo_course_3_7_1();    // 组件(widgets)： 滚轮(lv_roller)的用法
+	//lv_100ask_demo_course_3_8_1();    // 组件(widgets)： 进度条(lv_bar)的用法
 
 
     while(!lv_win32_quit_signal) {
