@@ -9,6 +9,7 @@
  * Change Logs:
  * Date           Author          Notes
  * 2022-04-25     zhouyuebiao     First version
+ * 2022-05-11     zhouyuebiao     1.2
  ******************************************************************************
  * @attention
  *
@@ -40,15 +41,21 @@
 
 
 /**********************
+ *  STATIC VARIABLES
+ **********************/
+/* 使用共享样式，设置样式 */
+/* 多个组件使用同一个共享样式，可以节省内存 */
+static lv_style_t style_part_main;  				// 保存part main样式
+static lv_style_t style_part_knob;					// 保存part knob(旋钮)样式
+static lv_style_t style_part_indicator;				// 保存part indicator(指示器)样式
+
+/**********************
  *  STATIC PROTOTYPES
  **********************/
 static void slider_event_cb(lv_event_t * e);
-static void test_slider(void);
-
-/**********************
- *  STATIC VARIABLES
- **********************/
-
+static void slider_style_init(void);
+static void test1_slider(void);
+static void test2_slider(void);
 
 /**********************
  *   GLOBAL FUNCTIONS
@@ -138,14 +145,22 @@ void lv_100ask_demo_course_3_9_1(void)
 
 	// 设置事件处理回调函数，接收所有的事件类型
 	lv_obj_add_event_cb(slider, slider_event_cb, LV_EVENT_ALL, label);
-#endif
+#endif	
 
 #endif
 
 	/* slider 小实战，打开下面的宏开关前，请先关闭上面的宏开关 */
 	// 视频教程： https://www.bilibili.com/video/BV1Ya411r7K2?p=32
 #if 0
-	test_slider();
+	// 共享样式初始化之后，就可以给其他部件使用
+	// 如果要创建多个组件，并且他们的样式都是一样的，
+	// 那么，使用同一个共享样式就可以达到节省内存的目的
+	slider_style_init();
+
+	// 创建并初始化多个slider
+	test1_slider();
+	test2_slider();
+
 #endif
 
 }
@@ -153,23 +168,9 @@ void lv_100ask_demo_course_3_9_1(void)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
-static void test_slider(void)
+
+static void slider_style_init(void)
 {
-	// 创建一个 slider 组件(对象)，他的父对象是活动屏幕对象
-	lv_obj_t *slider = lv_slider_create(lv_scr_act());
-
-	/* 设置位置 */
-	lv_obj_center(slider); 								// 方法1：让对象居中，简洁
-	//lv_obj_align(slider, LV_ALIGN_CENTER, 0, 0); 		// 方法2：让对象居中，较为灵活
-
-	/*调整大小，让 slider 垂直摆放  */
-	lv_obj_set_size(slider, 60, 150);
-
-	/* 使用共享样式，设置样式 */
-	static lv_style_t style_part_main;  				// 保存part main样式
-	static lv_style_t style_part_knob;					// 保存part knob(旋钮)样式
-	static lv_style_t style_part_indicator;				// 保存part indicator(指示器)样式
-
 	/* 初始化样式 */
 	lv_style_init(&style_part_main);
 	lv_style_init(&style_part_knob);
@@ -177,11 +178,11 @@ static void test_slider(void)
 
 	/* 设置 PART MAIN 样式 */
 	lv_style_set_radius(&style_part_main, 15);			// 设置四个角的圆角
-	lv_style_set_bg_color(&style_part_main,
+	lv_style_set_bg_color(&style_part_main, 
 						  lv_color_hex(0xc43e1c));		// 设置背景颜色
-	lv_style_set_pad_top(&style_part_main, -2);			// 设置顶部(top)的填充(top)大小
+	lv_style_set_pad_top(&style_part_main, -2); 		// 设置顶部(top)的填充(top)大小
 	lv_style_set_pad_bottom(&style_part_main, -2);		// 设置底部部(bottom)的填充(top)大小
-	lv_style_set_bg_opa(&style_part_main, LV_OPA_50);	// 设置背景透明度
+	//lv_style_set_bg_opa(&style_part_main, LV_OPA_100);	// 设置背景透明度
 
 	/* 设置 PART KNOB 样式 */
 	// 将 knob 部分整个设置为透明，就能达到去除旋钮的效果
@@ -192,6 +193,19 @@ static void test_slider(void)
 	lv_style_set_radius(&style_part_indicator, 0);		// 设置四个角的圆角
 	lv_style_set_bg_color(&style_part_indicator,
 						  lv_color_hex(0xffffff));		// 设置背景颜色
+
+}
+static void test1_slider(void)
+{
+	// 创建一个 slider 组件(对象)，他的父对象是活动屏幕对象
+	lv_obj_t *slider = lv_slider_create(lv_scr_act());
+
+	/* 设置位置 */
+	lv_obj_center(slider); 								// 方法1：让对象居中，简洁
+	//lv_obj_align(slider, LV_ALIGN_CENTER, 0, 0); 		// 方法2：让对象居中，较为灵活
+
+	/*调整大小，让 slider 垂直摆放  */
+	lv_obj_set_size(slider, 60, 150);
 
 
 	/* 将样式应用到 slider */
@@ -217,13 +231,55 @@ static void test_slider(void)
 	// 在lvgl中内置符号可以像 text 那样使用，lvgl 内置了很多不一样的字体(ASCII)，
 	// 使用不同尺寸的内置字体就能展示不一样大小的 text ，默认是：lv_font_montserrat_14
 	// 需要设置内置字体，请查看： lv_conf.h 中的 LV_FONT_MONTSERRAT_...
-	//lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
+	lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
 	lv_obj_set_style_text_color(label, lv_color_hex(0xac8477), 0);
 	lv_obj_align(label, LV_ALIGN_BOTTOM_MID, 0, -20);
 
 }
 
 
+
+static void test2_slider(void)
+{
+	// 创建一个 slider 组件(对象)，他的父对象是活动屏幕对象
+	lv_obj_t *slider = lv_slider_create(lv_scr_act());
+
+	/* 设置位置 */
+	//lv_obj_center(slider); 								// 方法1：让对象居中，简洁
+	//lv_obj_align(slider, LV_ALIGN_CENTER, 0, 0); 		// 方法2：让对象居中，较为灵活
+
+	/*调整大小，让 slider 垂直摆放  */
+	lv_obj_set_size(slider, 60, 150);
+
+
+	/* 将样式应用到 slider */
+	// 将保存在 style_part_main 中的样式应用到
+	// slider 的 LV_PART_MAIN 上
+	lv_obj_add_style(slider, &style_part_main, LV_PART_MAIN);
+
+	// 将保存在 style_part_knob 中的样式应用到
+	// slider 的 LV_PART_KNOB 上
+	lv_obj_add_style(slider, &style_part_knob, LV_PART_KNOB);
+
+	// 将保存在 style_part_indicator 中的样式应用到
+	// slider 的 LV_PART_INDICATOR 上
+	lv_obj_add_style(slider, &style_part_indicator, LV_PART_INDICATOR);
+
+
+	/* 在 slider 内部放一个小图标，用来表明slider的作用 */
+	// 这里使用 lvgl 的内置符号(方便、节省内存)，可以使用img展示。
+	// lvgl内置符号： http://lvgl.100ask.net/8.2/overview/font.html#special-fonts
+	lv_obj_t *label = lv_label_create(slider);
+	lv_label_set_text(label, LV_SYMBOL_VOLUME_MAX);
+
+	// 在lvgl中内置符号可以像 text 那样使用，lvgl 内置了很多不一样的字体(ASCII)，
+	// 使用不同尺寸的内置字体就能展示不一样大小的 text ，默认是：lv_font_montserrat_14
+	// 需要设置内置字体，请查看： lv_conf.h 中的 LV_FONT_MONTSERRAT_...
+	lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
+	lv_obj_set_style_text_color(label, lv_color_hex(0xac8477), 0);
+	lv_obj_align(label, LV_ALIGN_BOTTOM_MID, 0, -20);
+
+}
 
 static void slider_event_cb(lv_event_t * e)
 {
