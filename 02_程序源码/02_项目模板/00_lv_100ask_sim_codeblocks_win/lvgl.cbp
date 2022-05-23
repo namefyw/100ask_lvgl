@@ -67,6 +67,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_2_2_6/lv_100ask_demo_course_2_2_6.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_10_1/lv_100ask_demo_course_3_10_1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_10_1/lv_100ask_demo_course_3_10_1.h" />
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_1_1/lv_100ask_demo_course_3_1_1.c">
 			<Option compilerVar="CC" />
 		</Unit>

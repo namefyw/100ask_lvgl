@@ -42,6 +42,7 @@
 #define LV_USE_100ASK_DEMO_COURSE_3_7_1      1
 #define LV_USE_100ASK_DEMO_COURSE_3_8_1      1
 #define LV_USE_100ASK_DEMO_COURSE_3_9_1      1
+#define LV_USE_100ASK_DEMO_COURSE_3_10_1     1
 
 
 

@@ -47,7 +47,8 @@ extern "C" {
 #include "src/lv_100ask_demo_course_3_6_1/lv_100ask_demo_course_3_6_1.h"    // 组件(widgets)： 下拉列表(lv_dropdown))的用法
 #include "src/lv_100ask_demo_course_3_7_1/lv_100ask_demo_course_3_7_1.h"    // 组件(widgets)： 滚轮(lv_roller)的用法
 #include "src/lv_100ask_demo_course_3_8_1/lv_100ask_demo_course_3_8_1.h"    // 组件(widgets)： 进度条(lv_bar)的用法
-#include "src/lv_100ask_demo_course_3_9_1/lv_100ask_demo_course_3_9_1.h"    // 组件(widgets)： 进度条(lv_slider)的用法
+#include "src/lv_100ask_demo_course_3_9_1/lv_100ask_demo_course_3_9_1.h"    // 组件(widgets)： 滑动条(lv_slider)的用法
+#include "src/lv_100ask_demo_course_3_10_1/lv_100ask_demo_course_3_10_1.h"  // 组件(widgets)： 圆弧(lv_arc)的用法
 
 
 
