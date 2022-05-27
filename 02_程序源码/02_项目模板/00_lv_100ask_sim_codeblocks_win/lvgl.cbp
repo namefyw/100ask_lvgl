@@ -71,6 +71,13 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_10_1/lv_100ask_demo_course_3_10_1.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_10_1/lv_100ask_font_source_han_mono_extra_light_32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_10_3/lv_100ask_demo_course_3_10_3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_10_3/lv_100ask_demo_course_3_10_3.h" />
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_1_1/lv_100ask_demo_course_3_1_1.c">
 			<Option compilerVar="CC" />
 		</Unit>

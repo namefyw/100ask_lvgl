@@ -46,6 +46,8 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
+static void lv_100ask_arc_test(void);
+static void arc_event_cb(lv_event_t * e);
 
 /**********************
  *  STATIC VARIABLES
@@ -54,15 +56,7 @@
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
-static void arc_event_cb(lv_event_t * e)
-{
-    lv_obj_t * arc = lv_event_get_target(e);
-	lv_obj_t * label = (lv_obj_t *)lv_event_get_user_data(e);
-	int16_t value = lv_arc_get_value(arc);
-	
-	lv_label_set_text_fmt(label, "%d", value);
-	LV_LOG_USER("lv_arc_get_value(arc) = %d", value);
-}
+
  
 void lv_100ask_demo_course_3_10_1(void)
 {
@@ -183,11 +177,91 @@ void lv_100ask_demo_course_3_10_1(void)
 
 #endif	
 
+#if 0
+	lv_100ask_arc_test();
+#endif
+
 }
 
 
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+static void arc_event_cb(lv_event_t * e)
+{
+	lv_obj_t * arc = lv_event_get_target(e);
+	lv_obj_t * label = (lv_obj_t *)lv_event_get_user_data(e);
+	int16_t value = lv_arc_get_value(arc);
+	
+	lv_label_set_text_fmt(label, "%d°", value);
+	LV_LOG_USER("lv_arc_get_value(arc) = %d", value);
+}
+
+LV_FONT_DECLARE(lv_100ask_font_source_han_mono_extra_light_32);
+
+static void lv_100ask_arc_test(void)
+{
+	/* 第1层：以屏幕对象为容器(parent)，创建一个arc，其成为后面创建的组件的容器(parent) */
+	lv_obj_t * arc_tmp = lv_arc_create(lv_scr_act());
+	lv_obj_center(arc_tmp);
+	lv_obj_set_size(arc_tmp, 350, 350);
+	lv_arc_set_range(arc_tmp, 15, 35);
+	lv_arc_set_value(arc_tmp, 23);
+	lv_arc_set_bg_angles(arc_tmp, 120, 60);
+
+	lv_obj_set_style_radius(arc_tmp, 360, LV_PART_MAIN);							// 设置part main在默认状态下的圆角		
+	lv_obj_set_style_bg_opa(arc_tmp, LV_OPA_COVER, LV_PART_MAIN);  					// 设置part main在默认状态下的背景透明度
+	lv_obj_set_style_bg_color(arc_tmp, lv_color_make(30, 35, 45), LV_PART_MAIN); 	// 设置part main在默认状态下的背景颜色
+	lv_obj_set_style_pad_all(arc_tmp, 10, LV_PART_MAIN);							// 设置part main在默认状态下的填充/间隔/pad
+	lv_obj_set_style_arc_color(arc_tmp, lv_color_make(15, 18, 21), LV_PART_MAIN); 	// 设置背景弧在默认状态下的颜色
+	lv_obj_set_style_arc_width(arc_tmp, 15, LV_PART_MAIN);							// 设置背景弧在默认状态下的宽度
+	lv_obj_set_style_arc_color(arc_tmp, lv_color_make(54, 185, 246), LV_PART_INDICATOR);	// 设置前景弧在默认状态下的颜色
+	lv_obj_set_style_arc_width(arc_tmp, 15, LV_PART_INDICATOR);						// 设置前景弧在默认状态下的宽度
+
+	// 去除旋钮部分的样式，相当于让选秀部分整个不存在
+	lv_obj_remove_style(arc_tmp, NULL, LV_PART_KNOB);		// 方法1，去除arc组件中整个PART_KNOB的样式
+	lv_obj_set_style_opa(arc_tmp, LV_OPA_0, LV_PART_KNOB);  // 方法2，让PART_KNOB完全透明
+
+	/* 第2层：以前面的组件为容器(parent)，创建一个面板，用来突出层次感，并成为后面创建的组件的容器(parent) */
+	lv_obj_t * panel3 = lv_obj_create(arc_tmp);
+	lv_obj_set_size(panel3, 280, 280);
+	lv_obj_center(panel3);
+
+	lv_obj_set_style_radius(panel3, 360, LV_PART_MAIN);								// 设置part main在默认状态下的圆角		
+	lv_obj_set_style_bg_color(panel3, lv_color_make(100, 100, 100), LV_PART_MAIN);	// 设置part main在默认状态下的背景颜色
+	lv_obj_set_style_bg_grad_color(panel3, lv_color_make(60, 65, 75), LV_PART_MAIN);// 设置part main在默认状态下的背景渐变颜色
+	lv_obj_set_style_bg_grad_dir(panel3, LV_GRAD_DIR_VER, LV_PART_MAIN);			// 设置part main在默认状态下的背景渐变方向
+	lv_obj_set_style_border_color(panel3, lv_color_make(45, 50, 60), LV_PART_MAIN); // 设置part main在默认状态下的边框宽度
+	lv_obj_set_style_arc_width(panel3, 2, LV_PART_MAIN);							
+	lv_obj_set_style_shadow_color(panel3, lv_color_make(5, 10, 15), LV_PART_MAIN);	// 设置part main在默认状态下的阴影颜色
+	lv_obj_set_style_shadow_width(panel3, 80, LV_PART_MAIN);						// 设置part main在默认状态下的阴影宽度
+	lv_obj_set_style_shadow_spread(panel3, 0, LV_PART_MAIN);						// 设置part main在默认状态下的阴影扩散范围
+	lv_obj_set_style_shadow_ofs_x(panel3, 0, LV_PART_MAIN);							// 设置part main在默认状态下的阴影在x轴上的偏移
+	lv_obj_set_style_shadow_ofs_y(panel3, 30, LV_PART_MAIN);						// 设置part main在默认状态下的阴影在y轴上的偏移
+
+	/* 第3层：以前面的组件为容器(parent)，再创建一个面板，用来突出层次感，同时成为展示当前数值组件的容器(parent) */
+	lv_obj_t * panel_temp_value = lv_obj_create(panel3);
+	lv_obj_set_size(panel_temp_value, 200, 200);
+	lv_obj_center(panel_temp_value);
+
+	lv_obj_set_style_radius(panel_temp_value, 360, LV_PART_MAIN);								// 设置part main在默认状态下的圆角		
+	lv_obj_set_style_bg_color(panel_temp_value, lv_color_make(12, 25, 30), LV_PART_MAIN);		// 设置part main在默认状态下的背景颜色		
+	lv_obj_set_style_bg_grad_color(panel_temp_value, lv_color_make(25, 28, 38), LV_PART_MAIN);	// 设置part main在默认状态下的背景渐变颜色
+	lv_obj_set_style_bg_grad_dir(panel_temp_value, LV_GRAD_DIR_VER, LV_PART_MAIN);				// 设置part main在默认状态下的背景渐变方向
+	lv_obj_set_style_border_color(panel_temp_value, lv_color_make(90, 100, 110), LV_PART_MAIN);	// 设置part main在默认状态下的边框宽度
+	//lv_obj_set_style_arc_width(panel3, 2, LV_PART_MAIN);
+
+	/* 第4层：以前面的组件为容器(parent)，创建一个label组件，用来展示 */
+	lv_obj_t * label_temp = lv_label_create(panel_temp_value);
+	lv_label_set_text_fmt(label_temp, "%d°", 23);
+	lv_obj_center(label_temp);
+
+	lv_obj_set_style_text_font(label_temp, &lv_100ask_font_source_han_mono_extra_light_32, LV_PART_MAIN); 	// 设置label_temp在默认状态下的字体
+	lv_obj_set_style_text_color(label_temp, lv_color_make(255, 255, 255), LV_PART_MAIN);					// 设置label_temp在默认状态下的字体颜色
+
+	/* 事件处理回调函数，在控制台和label_temp上实时展示当前数值 */
+	lv_obj_add_event_cb(arc_tmp, arc_event_cb, LV_EVENT_VALUE_CHANGED, label_temp);
+	
+}
 
 #endif /* LV_USE_100ASK_DEMO_COURSE_3_10_1 */
