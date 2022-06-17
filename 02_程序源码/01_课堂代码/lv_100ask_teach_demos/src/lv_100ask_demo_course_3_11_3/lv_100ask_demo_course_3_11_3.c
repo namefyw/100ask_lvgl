@@ -59,7 +59,6 @@ void lv_100ask_demo_course_3_11_3(void)
     lv_arc_set_value(arc, 50);
     lv_obj_remove_style(arc, NULL, LV_PART_KNOB);   /*Be sure the knob is not displayed*/
     lv_obj_clear_flag(arc, LV_OBJ_FLAG_CLICKABLE);  /*To not allow adjusting by click*/
-    lv_obj_center(arc);
 
     /*
       我们这里给他设置的坐标只是设置了组件的样式坐标位置，还不是实际的坐标位置，
@@ -71,7 +70,7 @@ void lv_100ask_demo_course_3_11_3(void)
                         lv_obj_refr_pos
       我们调用 lv_obj_get_x 和 lv_obj_get_x 获取的是根据组件的实际坐标位置计算后的数值。
       并且由于我们所有组件的基类(lv_obj)在创建的时候，其pos(x1, y1)的初始值是[0,100],
-      所以，我们在组件创建出来之后马上get_x/get_y获取到的值是[0,100]或者不是最新的值(即使你创建之后马上set pos，得到的仍然是[0,100])。 
+      所以，我们在组件创建出来之后马上get_x/get_y获取到的值是[0,100]或者不是最新的值(即使你创建之后马上set pos，得到的仍然是[0,100])。
     */
     LV_LOG_USER("arc x:%d, arc y:%d\n", lv_obj_get_x(arc), lv_obj_get_y(arc));
 
@@ -80,13 +79,14 @@ void lv_100ask_demo_course_3_11_3(void)
     // 给arc设置新的坐标位置(x、y)
     lv_obj_set_pos(arc, 100, 200);
     // 如果想马上获取最新的值，可以通过这两个函数刷新arc的状态
-    lv_obj_refr_pos(arc);
-    //lv_obj_update_layout(lv_scr_act());  // 这个函数中其实调用的是 lv_obj_refr_pos
-    
+    //lv_obj_refr_pos(arc);
+    lv_obj_update_layout(lv_scr_act());  // 这个函数中其实调用的是 lv_obj_refr_pos
+
     // 假设在lvgl的任务管理器运行了起码一个周期的时候，假设arc之前的的位置为初始值 [0,100]，
     // 如果没有先运行上面两个函数，马上就获取宽高，这时候你获取到的是之前的数值： [0,100]，
     // 因为arc还没有刷新，得到的不是最新的坐标位置。
     LV_LOG_USER("arc refr x:%d, arc refr y:%d\n", lv_obj_get_x(arc), lv_obj_get_y(arc));
+
 #endif
 
 #if 0
