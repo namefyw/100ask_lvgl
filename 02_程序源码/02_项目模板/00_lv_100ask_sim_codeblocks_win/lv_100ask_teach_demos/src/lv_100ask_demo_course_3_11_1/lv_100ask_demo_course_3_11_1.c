@@ -71,10 +71,10 @@ void lv_100ask_demo_course_3_11_1(void)
     因此，如果三个定时器的周期设置一样的话，那么最后创建的timer会先执行。
   */
   lv_timer_t * timer;
-#if 1
+#if 1  
   /* 创建第一个timer */
   timer = lv_timer_create(my_timer1, 500,  NULL);
-
+	
   //lv_timer_set_cb(timer, my_timer1);
 	//lv_timer_set_period(timer, 100);
 
@@ -93,7 +93,7 @@ void lv_100ask_demo_course_3_11_1(void)
 #if 1
   /* 创建第二个timer */
   timer = lv_timer_create(my_timer2, 500,  NULL);
-
+  
   // 修改此timer的回调函数和周期时间
 	//lv_timer_set_cb(timer, my_timer2);
 	//lv_timer_set_period(timer, 100);
@@ -110,7 +110,7 @@ void lv_100ask_demo_course_3_11_1(void)
   //lv_timer_reset(timer);
 #endif
 
-#if 1
+#if 1 
   /* 通过另一个接口创建第三个timer */
 	timer = lv_timer_create_basic();
 
@@ -134,7 +134,7 @@ void lv_100ask_demo_course_3_11_1(void)
   /* 创建一个按钮 */
   lv_obj_t * btn = lv_btn_create(lv_scr_act());
   lv_obj_add_flag(btn, LV_OBJ_FLAG_CHECKABLE);
-
+  
   // 在事件处理回调函数中我们会进行两个试验：
   // 1.点击按钮暂停或继续，上面的第三个timer
   lv_obj_add_event_cb(btn, btn_event_handler, LV_EVENT_ALL, timer);
@@ -206,7 +206,7 @@ static void btn_event_handler(lv_event_t * e)
         lv_timer_resume(timer3);
       }
 #else
-      /*测试2：通过异步调用删除arc*/
+      /*测试2：通过异步调用删除arc*/  
       // 通常情况下，我们可以通过调用 lv_obj_del 当场直接删除对象
       // 但是有些情况我们不能马上删除该对象，
       // 我们可以在下次运行lv_task_handler()时，第一时间(最高优先级)在进行删除

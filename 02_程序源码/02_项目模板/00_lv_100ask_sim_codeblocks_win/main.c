@@ -78,7 +78,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
 	//lv_100ask_demo_course_3_10_1();   // 组件(widgets)： 圆弧(lv_arc)的用法
 	//lv_100ask_demo_course_3_10_3();   // 组件(widgets)： 圆弧(lv_arc)-综合实战
     //lv_100ask_demo_course_3_11_1();   // 定时器： 定时器(lv_timer)的用法
-    //lv_100ask_demo_course_3_11_2();       // 为什么创建出来的组件获取到的宽高是0？(在学习2_2_2时遇到的问题)
+    //lv_100ask_demo_course_3_11_2();   // 为什么创建出来的组件获取到的宽高是0？(在学习2_2_2时遇到的问题)
+    //lv_100ask_demo_course_3_11_3();   // 为什么创建出来的组件获取到的坐标不正确？(在学习2_2_3时遇到的问题)
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.
