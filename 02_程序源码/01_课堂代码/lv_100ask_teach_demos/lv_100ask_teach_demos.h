@@ -55,6 +55,7 @@ extern "C" {
 #include "src/lv_100ask_demo_course_3_11_3/lv_100ask_demo_course_3_11_3.h"  // 为什么创建出来的组件获取到的坐标不正确？(在学习2_2_3时遇到的问题)
 #include "src/lv_100ask_demo_course_3_12_1/lv_100ask_demo_course_3_12_1.h"  // 组件(widgets)： 线条(lv_line)的用法
 #include "src/lv_100ask_demo_course_3_12_2/lv_100ask_demo_course_3_12_2.h"  // 组件(widgets)： 线条(lv_line)实战
+#include "src/lv_100ask_demo_course_3_13_1/lv_100ask_demo_course_3_13_1.h"  // 组件(widgets)： 线条(lv_textarea)的用法
 
 
 /*********************

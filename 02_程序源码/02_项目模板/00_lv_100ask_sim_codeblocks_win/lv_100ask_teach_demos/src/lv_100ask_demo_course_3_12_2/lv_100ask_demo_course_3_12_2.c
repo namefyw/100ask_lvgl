@@ -90,8 +90,8 @@ void lv_100ask_demo_course_3_12_2(void)
         创建一个定时器每隔5ms刷新一次
         这里要注意的是，虽然你设置的每隔5ms一次，
         但是实际最小的周期时间，受限于 lv_task_handler 的睡眠时间；
-        所以，我们这里设置的是 5ms，但是实际上是 10ms，因为我们的 lv_task_handler 睡眠时间 10ms。
-        我们创建的定时器的运行周期不可能小于 lv_task_handler 的运行周期
+        所以，我们这里设置的是 5ms，但是实际上是 ≥10ms，因为我们的 lv_task_handler 睡眠时间是 10ms。
+        也就说我们创建的定时器的运行周期不可能小于 lv_task_handler 的运行周期
     */
     lv_timer_t * timer = lv_timer_create(sin_timer, 5,  line);
 }
