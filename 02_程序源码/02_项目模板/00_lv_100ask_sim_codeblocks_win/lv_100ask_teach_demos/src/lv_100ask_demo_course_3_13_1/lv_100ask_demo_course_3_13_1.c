@@ -63,8 +63,8 @@ void lv_100ask_demo_course_3_13_1(void)
 	// 这个要在添加或者设置文本之前设置，否则第一次添加或者设置文本不会有长度限制
 	// 为 0 时无限制
 	//lv_textarea_set_max_length(ta, 8);
-	//lv_textarea_set_max_length(ta, 8); // 无限制
-
+	//lv_textarea_set_max_length(ta, 0); // 无限制
+	
 	/* 添加文本 */
 	// 1. 单个字符添加
 #if 0
@@ -107,7 +107,7 @@ void lv_100ask_demo_course_3_13_1(void)
 	// 聚焦状态下，光标才会展示出来，如果我们想一开打页面或者执行的时候就让
 	// textarea 进入聚焦状态，那么就可以用这个方法
 	//lv_obj_add_state(ta, LV_STATE_FOCUSED);
-
+	
 	/* 删除字符 */
 	// 1. 删除光标后面的一个字符
 	//lv_textarea_del_char(ta);
@@ -129,6 +129,10 @@ void lv_100ask_demo_course_3_13_1(void)
 	// 也就是说，这个模式下，我们的字体要有 '•' 或 '*' 字符。
 	//lv_textarea_set_password_mode(ta, true);
 
+	/* 字符白名单 */
+	// 设置可接受字符列表(白名单)，输入白名单之外的字符将被忽略。
+	lv_textarea_set_accepted_chars(ta, "0123456789.+-");
+
 	/* 可选择文本 */
 	// 这和我们使用鼠标在电脑上选择文字非常相似，但是要注意，
 	// textarea 本身并没有 LV_PART_SELECTED ，说 textarea 有这部分是因为其集成了 label，
@@ -139,14 +143,14 @@ void lv_100ask_demo_course_3_13_1(void)
 	// 想选择文本，要先确保设置了：让光标跟随触摸跳转位置
 	// 也就是：lv_textarea_set_cursor_click_pos(ta, true)
 	lv_textarea_set_text_selection(ta, true);
-	lv_obj_set_style_text_color(lv_textarea_get_label(ta), lv_color_hex(0xc43e1c), LV_PART_SELECTED);
-	lv_obj_set_style_bg_color(lv_textarea_get_label(ta), lv_color_hex(0x43a72d), LV_PART_SELECTED);
+	lv_obj_set_style_text_color(lv_textarea_get_label(ta), lv_color_hex(0xc43e1c), LV_PART_SELECTED); 
+	lv_obj_set_style_bg_color(lv_textarea_get_label(ta), lv_color_hex(0x43a72d), LV_PART_SELECTED); 
 #endif
 
 	/* 为 textarea 分配回调函数 */
 	// 1. 完成替换即将插入的问题为其他指定的文本
 	// 2. 当文本框的内容被改变时，打印提示
-	//lv_obj_add_event_cb(ta, ta_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ta, ta_event_handler, LV_EVENT_ALL, NULL);
 
 	/* 创建两个按钮，模拟键盘按键输入和删除 */
 	// 第1个按钮： 输入字符 'a'
@@ -156,6 +160,9 @@ void lv_100ask_demo_course_3_13_1(void)
 	lv_obj_center(btn);
 	label = lv_label_create(btn);
 	lv_label_set_text(label, "a");
+	// 如果开启了上面的字符白名单，这可以使用下面这个文本测试看看效果
+	// a、b、c 字符不在白名单中，所以无法通过，不能插入到文本框中
+	//lv_label_set_text(label, "1a2b3c+");
 	lv_obj_center(label);
 
 	lv_obj_add_event_cb(btn, event_handler, LV_EVENT_ALL, ta);
@@ -166,7 +173,7 @@ void lv_100ask_demo_course_3_13_1(void)
 	label = lv_label_create(btn);
 	lv_label_set_text(label, LV_SYMBOL_BACKSPACE);
 	lv_obj_center(label);
-
+	
 	lv_obj_add_event_cb(btn, event_handler, LV_EVENT_ALL, ta);
 
 
@@ -201,7 +208,7 @@ static void ta_event_handler(lv_event_t * e)
 		// 如果我们通过点击按钮输入文本到文本框前，会触发这个事件，
 		// 处理完所有接收 LV_EVENT_INSERT 回调函数之后才会将文本真正添加到文本框。
 		// 所以我们这里可以做检查或者替换，比如帮助用户纠正输入。
-		lv_textarea_set_insert_replace(ta, "bbb");
+		//lv_textarea_set_insert_replace(ta, "bbb");
 	}
 	else if(code == LV_EVENT_VALUE_CHANGED) {
 		// 当文本框的内容被改变时发送该事件
