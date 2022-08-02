@@ -84,6 +84,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     //lv_100ask_demo_course_3_12_2();   // 组件(widgets)： 线条(lv_line)实战
     //lv_100ask_demo_course_3_13_1();   // 组件(widgets)： 文本框(lv_textarea)的用法
     //lv_100ask_demo_course_3_14_1();   // 组件(widgets)： 按钮矩阵(lv_btnmatrix)的用法
+    //lv_100ask_demo_course_3_14_2();   // 组件(widgets)： 按钮矩阵(lv_btnmatrix)和按钮(lv_btn)的对比(显示多个按钮谁更轻量级？)
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

@@ -57,6 +57,7 @@ extern "C" {
 #include "src/lv_100ask_demo_course_3_12_2/lv_100ask_demo_course_3_12_2.h"  // 组件(widgets)： 线条(lv_line)实战
 #include "src/lv_100ask_demo_course_3_13_1/lv_100ask_demo_course_3_13_1.h"  // 组件(widgets)： 线条(lv_textarea)的用法
 #include "src/lv_100ask_demo_course_3_14_1/lv_100ask_demo_course_3_14_1.h"  // 组件(widgets)： 按钮矩阵(lv_btnmatrix)的用法
+#include "src/lv_100ask_demo_course_3_14_2/lv_100ask_demo_course_3_14_2.h"  // 组件(widgets)： 按钮矩阵(lv_btnmatrix)和按钮(lv_btn)的对比
 
 
 /*********************
