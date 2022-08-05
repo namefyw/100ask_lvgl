@@ -59,6 +59,8 @@ extern "C" {
 #include "src/lv_100ask_demo_course_3_14_1/lv_100ask_demo_course_3_14_1.h"  // 组件(widgets)： 按钮矩阵(lv_btnmatrix)的用法
 #include "src/lv_100ask_demo_course_3_14_2/lv_100ask_demo_course_3_14_2.h"  // 组件(widgets)： 按钮矩阵(lv_btnmatrix)和按钮(lv_btn)的对比
 
+#include "src/lv_100ask_demo_course_6_1_1/lv_100ask_demo_course_6_1_1.h"    // 第三方库(lv_fs)：通过LVGL文件系统接口统一不同的文件系统并读取文件、读取目录内容
+
 
 /*********************
  *      DEFINES

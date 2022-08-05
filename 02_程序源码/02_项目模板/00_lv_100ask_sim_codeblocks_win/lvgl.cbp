@@ -150,6 +150,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_3_9_1/lv_100ask_demo_course_3_9_1.h" />
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_6_1_1/lv_100ask_demo_course_6_1_1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_demo_course_6_1_1/lv_100ask_demo_course_6_1_1.h" />
 		<Unit filename="lv_100ask_teach_demos/src/lv_100ask_teach_demos.h" />
 		<Unit filename="lv_100ask_teach_demos_conf.h" />
 		<Unit filename="lv_conf.h" />

@@ -86,6 +86,9 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     //lv_100ask_demo_course_3_14_1();   // 组件(widgets)： 按钮矩阵(lv_btnmatrix)的用法
     //lv_100ask_demo_course_3_14_2();   // 组件(widgets)： 按钮矩阵(lv_btnmatrix)和按钮(lv_btn)的对比(显示多个按钮谁更轻量级？)
 
+    //lv_100ask_demo_course_6_1_1();    // 第三方库(lv_fs)：通过LVGL文件系统接口统一不同的文件系统并读取文件、读取目录内容
+
+
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.
          * It could be done in a timer interrupt or an OS task too.*/

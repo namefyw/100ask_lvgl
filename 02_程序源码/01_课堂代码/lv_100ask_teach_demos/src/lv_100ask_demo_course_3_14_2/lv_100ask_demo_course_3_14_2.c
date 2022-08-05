@@ -58,7 +58,7 @@ static void free_obj_event_handler(lv_event_t * e);
 
 void lv_100ask_demo_course_3_14_2(void)
 {
-#if 0
+#if 1
 	/* 创建普通的按钮(btn) */
 	lv_obj_t * btn;
 	lv_obj_t * label;
@@ -93,7 +93,7 @@ void lv_100ask_demo_course_3_14_2(void)
         printf("%d\n", i);
 	}
 
-	/* 最后一项必须是 NULL 或者 "" 
+	/* 最后一项必须是 NULL 或者 ""
 	   否则就算不报错，btnm的显示会异常。
 	*/
 	btnm_map[ITEMS_SUM] = NULL;
