@@ -62,6 +62,8 @@ extern "C" {
 #include "src/lv_100ask_demo_course_6_1_1/lv_100ask_demo_course_6_1_1.h"    // 第三方库(lv_fs)：通过LVGL文件系统接口统一不同的文件系统并读取文件、读取目录内容
 #include "src/lv_100ask_demo_course_6_4_1/lv_100ask_demo_course_6_4_1.h"    // 第三方库(lv_fs)：通过freeType显示字体
 
+#include "src/lv_100ask_demo_course_x_1_1/lv_100ask_demo_course_x_1_1.h"    // 拓展部分：通过 FontAwesome 添加新图标SYMBOLS
+
 
 /*********************
  *      DEFINES
