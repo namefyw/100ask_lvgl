@@ -24,7 +24,7 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if LV_USE_100ASK_DEMO_COURSE_6_4_1
+#if LV_USE_100ASK_DEMO_COURSE_6_4_1 && LV_USE_FREETYPE
 
 #include "lv_100ask_demo_course_6_4_1.h"
 
@@ -53,6 +53,8 @@
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+// 需要先在 lv_conf.h 中打开  LV_USE_FREETYPE
+
 void lv_100ask_demo_course_6_4_1(void)
 {
     /*Create a font*/

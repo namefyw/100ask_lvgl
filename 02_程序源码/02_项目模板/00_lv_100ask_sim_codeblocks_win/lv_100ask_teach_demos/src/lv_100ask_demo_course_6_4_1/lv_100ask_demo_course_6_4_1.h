@@ -23,6 +23,7 @@ extern "C" {
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
+// 需要先在 lv_conf.h 中打开  LV_USE_FREETYPE
 void lv_100ask_demo_course_6_4_1(void);
 
 

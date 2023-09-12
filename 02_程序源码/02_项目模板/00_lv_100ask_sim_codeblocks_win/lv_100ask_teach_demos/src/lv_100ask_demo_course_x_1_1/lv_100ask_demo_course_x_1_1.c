@@ -24,7 +24,7 @@
  *********************/
 #include "../../lv_100ask_teach_demos.h"
 
-#if LV_USE_100ASK_DEMO_COURSE_X_1_1
+#if LV_USE_100ASK_DEMO_COURSE_X_1_1 && LV_USE_FREETYPE
 
 #include "lv_100ask_demo_course_x_1_1.h"
 
@@ -55,6 +55,15 @@ LV_FONT_DECLARE(my_fontawesome_30);
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+
+/* ！！！运行前的操作步骤！！！ */
+/*  需要先在 lv_conf.h 中打开  LV_USE_FREETYPE
+ *  然后观看视频，或者阅读相应的PPT进行配置之后方可编译通过！
+ *
+ *  参考解决办法：https://forums.100ask.net/t/topic/4321
+ *  遇到问题请在这里留言：https://forums.100ask.net/t/topic/4321
+ */
+
 void lv_100ask_demo_course_x_1_1(void)
 {
     lv_obj_t * label = lv_label_create(lv_scr_act());
